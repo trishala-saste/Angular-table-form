@@ -1,0 +1,146 @@
+/* styles.scss */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.container-flud{
+    padding: 5px 5px ;
+}
+
+.container-flud > mat-card{
+    background-color:  rgb(98, 98, 252);;
+}
+.contanier{
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 0;
+}
+table, form, .d-flex{
+    padding: 20px 20px;
+    // border: 1px solid black;
+}
+table{
+    min-width: 50% !important;
+    margin-left: 20px;
+}
+mat-card{
+    background-color: rgb(98, 98, 252);
+    position: relative;
+    height: 8vh;
+    border-left: 4px solid black;
+}
+
+mat-card-content{
+    color: #fff;
+}
+th, td, tr{
+    border: 1px solid black;
+}
+
+th{
+    background-color: rgb(120, 120, 253) !important;
+}
+.d-flex> #hub{
+    margin-left: 20%;
+}
+
+label, mat-label{
+    font-size: 15px;
+    font-weight: 500;
+    // background-color: #fff !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+    background-color: white !important;
+}
+
+input{
+    padding: 5px 10px;
+}
+
+form > label, form > mat-form-field{
+    padding: 0px 4%;
+}
+
+.pad-22 > mat-form-field{
+    padding: 0px 3% !important;
+}
+form .margin-22{
+    margin-left: 2%;
+}
+.pad-22 > .mar-22{
+    margin-left: 1.5%;
+}
+
+ .add{
+    border-radius: 50%;
+    font-size: 25px;
+}
+.kgs{
+    margin-left: 70px;
+}
+button[type="submit"]{
+    margin-left: 50%;
+    margin-right: 2%;
+}
+
+.secondAdd .addSec{
+    position: relative;
+    margin-left: 70%;
+    border-radius: 50%;
+}
+
+.secondAdd .addS{
+    border-radius: 50%;
+
+}
+form > .addS{
+    
+    border-radius: 70%;
+    width: 2% !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: white !important;
+    border-radius: 0 !important;
+    height: 5%;
+}
+
+.pad-22 > mat-form-field {
+    // height: 10vh !important;
+}
+/* Add this CSS to your styles.css or styles.scss file */
+
+/* Increase specificity to target the filled text fields in mat-table */
+.mat-table .mat-form-field-appearance-fill .mat-form-field-wrapper .mat-form-field-flex {
+    // background-color: white !important; /* Set the background color to white */
+    
+  }
+  
+  
+
+.mdc-text-field--filled {
+    background-color: #fff !important;
+    border: 1px solid gray !important;
+}
+
+.mat-mdc-text-field-wrapper {
+    background-color: #fff !important;
+}
+
+.back-ff{
+    background-color: #fff !important;
+    border: 1px solid gray !important;
+}
+
+
+
+.mat-mdc-form-field{
+    height: 12vh !important;
+}
+
+.pad-22{
+    padding: 5px 5px !important;
+}
+
+.dateclass{
+    margin-left: 45px;
+    margin-right: 20px;
+}

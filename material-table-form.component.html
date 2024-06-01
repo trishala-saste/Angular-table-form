@@ -1,0 +1,181 @@
+<div class="container-flud">
+<div class="container-flud">
+    <mat-card>
+        <mat-card-content>BANDSAW INSIDE</mat-card-content>
+      </mat-card>
+      <div class="d-flex">
+      <label for="hub">HUB PIPE 5 FT (PLB) (SEMI FINISH)</label>
+      <input type="text" name="hub" id="hub" class="back-ff">
+    </div>
+<table mat-table [dataSource]="materials">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Material Name </th>
+      <td mat-cell *matCellDef="let material"> {{ material.name }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="requiredQty">
+      <th mat-header-cell *matHeaderCellDef> Required Qty </th>
+      <td mat-cell *matCellDef="let material"> {{ material.requiredQty }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="enterQty">
+      <th mat-header-cell *matHeaderCellDef> Enter Qty </th>
+      <td mat-cell *matCellDef="let material">
+        <input matInput [(ngModel)]="material.enterQty" type="number">
+      </td>
+    </ng-container>
+    
+  
+    <tr mat-header-row *matHeaderRowDef="['name', 'requiredQty', 'enterQty']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'requiredQty', 'enterQty']"></tr>
+  </table>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <form action="" class="pad-22">
+
+  <label for="type">OUTPUT OF BANDSAW INSIDE</label>
+  <mat-form-field>
+      
+    <mat-label>HUB PIPE 5 FT(PLB )(SEMI FINISH)</mat-label>
+    <mat-select>
+      <mat-option value="type1">Type 1</mat-option>
+      <mat-option value="type2">Type 2</mat-option>
+      
+    </mat-select>
+  </mat-form-field>
+
+  <label for="type" class="mar-22">ENTER QUANTITY</label>
+  <mat-form-field>
+      
+      <mat-label></mat-label>
+  <input matInput value="" id="matqty">
+
+  </mat-form-field>
+</form>
+
+  <mat-card>
+    <mat-card-content>LEFTOVER</mat-card-content>
+  </mat-card>
+
+  <div *ngFor="let field of addedFields; let i = index">
+    <form [formGroup]="myForm">
+      <label for="type">SELECT NEW MATERIAL</label>
+      <mat-form-field>
+        <mat-label>SELECT NEW MATERIAL SIZE</mat-label>
+        <mat-select>
+          <mat-option value="type1">Type 1</mat-option>
+          <mat-option value="type2">Type 2</mat-option>
+          
+        </mat-select>
+      </mat-form-field>
+  
+      <label for="type">ENTER QUANTITY</label>
+      <mat-form-field>
+        <mat-label></mat-label>
+        <input matInput [(ngModel)]="field.enterQty" id="matqty{{i}}">
+      </mat-form-field>
+
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Moment.js datepicker</mat-label>
+        <input matInput [matDatepicker]="dp" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field> -->
+      
+      
+       <input
+    type="text"
+    formControlName="date"
+    placeholder="dd/mm/yyyy"
+    appDateMask class="dateclass"/>
+    <!--
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-datepicker #picker></mat-datepicker> -->
+
+<!-- <mat-form-field>
+  <input matInput [matDatepicker]="picker" formControlName="date" placeholder="dd/mm/yyyy" (input)="formatDateInput()" (blur)="addSlashes()">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+ -->
+      
+
+ <!-- <mat-form-field>
+  <mat-label>Date</mat-label>
+  <input
+    matInput
+    [matDatepicker]="picker"
+    [formControl]="control"
+    (dateInput)="selectedDate.emit(control.value)"
+    placeholder="dd/mm/yyyy"
+  />
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field> -->
+
+  
+      <button mat-raised-button color="primary" (click)="removeField(i)" class="addS">-</button>
+      <button mat-raised-button color="primary" (click)="addField()" class="margin-22 addS" >+</button>
+    </form>
+  </div>
+  
+  
+  
+
+
+  <mat-card>
+    <mat-card-content>SCRAP/WASTAGE</mat-card-content>
+  </mat-card>
+  <form *ngFor="let scrap of addedScrapFields; let i = index" class="secondAdd">
+    <label for="type">ENTER PART NUMBER</label>
+    <mat-form-field>
+      <mat-label></mat-label>
+      <input matInput [(ngModel)]="scrap.num" type="number" id="num{{i}}">
+    </mat-form-field>
+  
+    <label for="type">ENTER QUANTITY</label>
+    <mat-form-field>
+      <mat-label></mat-label>
+      <input matInput [(ngModel)]="scrap.qty" id="qty{{i}}">
+    </mat-form-field>
+  
+    <label for="type">ENTER KGS</label>
+    <mat-form-field class="kgs">
+      <mat-label></mat-label>
+      <input matInput [(ngModel)]="scrap.kgs" type="number" id="kgs{{i}}">
+    </mat-form-field><br>
+
+    
+  
+    
+    <button *ngIf="i > 0" mat-raised-button color="primary" (click)="removeScrapField(i)" class="addSec">-</button>
+  
+  
+  <button mat-raised-button color="primary" (click)="addScrapField()" class="addS">+</button> <br> <br>
+
+
+ 
+
+  
+
+     
+  </form>
+
+  <button mat-raised-button color="primary" type="submit" >Submit</button> 
+  <button mat-raised-button color="primary" type="cancel" >Cancel</button> 
+
+
+ 
+
+</div>
+</div>
